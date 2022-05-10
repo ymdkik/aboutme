@@ -32,9 +32,8 @@ request.onload = function () {
      var data = this.response;
      todayt.textContent = data['forecasts']['0']['image']['title'];
      todaym.src = data['forecasts']['0']['image']['url'];
-     tomorrowt.textContent = data['forecasts']['0']['image']['title'];
+     tomorrowt.textContent = data['forecasts']['1']['image']['title'];
      tomorrowm.src = data['forecasts']['1']['image']['url'];
-     console.log(data['forecasts']['0']['image']);
 };
 
 request.send();

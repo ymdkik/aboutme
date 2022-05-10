@@ -56,8 +56,13 @@ h2::after {
     display: flex;
 }
 
-.youso {
+.yousom {
     margin: auto;
+    text-align: center;
+}
+
+.youso {
+    margin: 20px 0 20px 0;
     text-align: center;
 }
 
