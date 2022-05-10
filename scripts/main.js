@@ -5,6 +5,7 @@ const todayt = document.querySelector('.todayt');
 const todaym = document.querySelector('.todaym');
 const tomorrowt = document.querySelector('.tomorrowt');
 const tomorrowm = document.querySelector('.tomorrowm');
+const forecasttable = document.querySelector('.forecasttable');
 
 images.forEach(function(image) {
      image.addEventListener('click', function() {
@@ -34,6 +35,7 @@ request.onload = function () {
      todaym.src = data['forecasts']['0']['image']['url'];
      tomorrowt.textContent = data['forecasts']['1']['image']['title'];
      tomorrowm.src = data['forecasts']['1']['image']['url'];
+     forecasttable.href = data['link'];
 };
 
 request.send();
