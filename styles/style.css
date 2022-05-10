@@ -70,6 +70,18 @@ img {
     vertical-align: middle;
 }
 
+.forecast{
+    margin: 20px;
+    display: block;
+    padding: 10px;
+    background: #ffedd9;
+    border: 1px solid #999;
+    width: 230px;
+    margin-left: auto;
+    text-align: center;
+    border-radius: 15px;
+}
+
 .image {
     cursor: pointer;
 }

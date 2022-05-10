@@ -1,6 +1,10 @@
 const modalWrapper = document.querySelector('.modal-wrapper');
 const images = document.querySelectorAll('.image');
 const modalImage = document.querySelector('.modal-image');
+const todayt = document.querySelector('.todayt');
+const todaym = document.querySelector('.todaym');
+const tomorrowt = document.querySelector('.tomorrowt');
+const tomorrowm = document.querySelector('.tomorrowm');
 
 images.forEach(function(image) {
      image.addEventListener('click', function() {
@@ -18,3 +22,19 @@ modalWrapper.addEventListener('click', function() {
           modalImage.classList.remove('show');
      }
 });
+
+var request = new XMLHttpRequest();
+
+request.open('GET', 'https://weather.tsukumijima.net/api/forecast?city=360010', true);
+request.responseType = 'json';
+
+request.onload = function () {
+     var data = this.response;
+     todayt.textContent = data['forecasts']['0']['image']['title'];
+     todaym.src = data['forecasts']['0']['image']['url'];
+     tomorrowt.textContent = data['forecasts']['0']['image']['title'];
+     tomorrowm.src = data['forecasts']['1']['image']['url'];
+     console.log(data['forecasts']['0']['image']);
+};
+
+request.send();
